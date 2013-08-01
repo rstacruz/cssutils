@@ -1,11 +1,34 @@
+// ### selection
+// Changes selection color.
+//
+//     @import 'utils/selection';
+//
+//     .header {
+//       @include selection {
+//         background: #fa30f0;
+//         color: white;
+//       }
+//     }
+//
+= selection
+  &::selection
+    @content
+  &::-moz-selection
+    @content
+
+// ### root-selection
+// Changes selection color for the entire document. Include it at the top level.
+//
+//     @import 'utils/selection';
+//
+//     @include root-selection {
+//       background: #fa30f0;
+//       color: white;
+//     }
+//
 = root-selection
   ::selection
     @content
   ::-moz-selection
     @content
 
-= selection
-  &::selection
-    @content
-  &::-moz-selection
-    @content
