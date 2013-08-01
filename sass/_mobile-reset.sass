@@ -1,0 +1,31 @@
+// ### if-mobile-reset
+// Disables common tap stuff for iOS webapps such as tap outlines, image save
+// panel, and so on.
+//
+//     // Use it at the top level
+//     @include mobile-reset;
+//
+// References:
+//  - http://wiki.phonegap.com/w/page/16494795/iPhone%3A%20Prevent%20callout,%20link%20selection,%20text%20auto-resize
+//  - http://www.bitsandpix.com/entry/ios-webkit-uiwebview-remove-tapclick-highlightborder-with-css/
+//
+= mobile-reset
+  *
+    /* Disable text selection */
+    -webkit-user-select: none
+    user-select: none
+
+    /* Disable the image save panel (popup) */
+    -webkit-touch-callout: none
+
+    /* Prevent WebKit from resizing text to fit */
+    -webkit-text-size-adjust: none
+
+    /* Turn off link highlights */
+    -webkit-tap-highlight-color: transparent
+
+  /* For forms */
+  input, textarea, select
+    -webkit-user-select: auto
+    user-select: auto
+    -webkit-touch-callout: auto
