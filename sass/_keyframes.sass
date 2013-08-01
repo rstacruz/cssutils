@@ -1,0 +1,21 @@
+// ### keyframes
+// Defines keyframes for an animation.
+//
+//     @import keyframes {
+//       0% { opacity: 0; }
+//       100% { opacity: 1.0; }
+//     }
+//
+= keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-o-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @-khtml-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
