@@ -1,0 +1,26 @@
+@import compass/utilities/general/clearfix
+
+= fixed-right-sidebar($size: 200px, $gutter: 20px)
+  +pie-clearfix
+  padding-right: $size + $gutter
+
+  .main
+    float: left
+
+  .side
+    margin-right: -1 * ($size + $gutter)
+    width: $size
+    float: right
+
+= fixed-left-sidebar($size: 200px, $gutter: 20px)
+  +pie-clearfix
+  padding-left: $size + $gutter
+
+  .main
+    float: right
+
+  .side
+    margin-left: -1 * ($size + $gutter)
+    width: $size
+    float: left
+

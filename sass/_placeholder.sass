@@ -1,0 +1,15 @@
+// Style the placeholder text for inputs.
+//
+//     input
+//       +placeholder
+//         color: #aaa
+//
+= placeholder
+  &::-moz-placeholder /* FF19+ */
+    @content
+  &:-moz-placeholder /* FF18- */
+    @content
+  &:-ms-input-placeholder
+    @content
+  &::-webkit-input-placeholder
+    @content

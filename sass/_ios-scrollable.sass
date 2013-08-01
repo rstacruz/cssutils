@@ -1,0 +1,34 @@
+// Enables fancy scrolling in iOS via nested divs.
+//
+//     .panel {
+//        @include ios-scrollable-y;
+//        position: relative;
+//     }
+//
+// NOTE: `position: relative` is important!
+
+= ios-scrollable-y
+  &, >div
+    -webkit-overflow-scrolling: touch
+    overflow-x: hidden
+    overflow-y: auto
+
+  >div
+    position: absolute
+    left: 0
+    top: 0
+    bottom: 0
+    right: 0
+
+= ios-scrollable-x
+  &, >div
+    -webkit-overflow-scrolling: touch
+    overflow-x: auto
+    overflow-y: hidden
+
+  >div
+    position: absolute
+    left: 0
+    top: 0
+    bottom: 0
+    right: 0

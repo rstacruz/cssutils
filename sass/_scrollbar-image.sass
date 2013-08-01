@@ -1,0 +1,17 @@
+// Enables webkit scrollbars using an image.
+// Make a 16x16 PNG image of a circle. This will be expanded to fill the scrollbar.
+//
+//     +scrollbar-image(url(scroll-dark.png), 16)
+//
+
+= scrollbar-image($image, $size: 16px)
+  $half: floor($size / 2)
+  $half-n: $half / ($half * 0 + 1)
+
+  &::-webkit-scrollbar
+    width: $size
+    height: $size
+
+  &::-webkit-scrollbar-thumb
+    border-width: $half $half $half $half
+    -webkit-border-image: $image $half-n $half-n $half-n $half-n round round

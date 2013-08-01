@@ -1,0 +1,52 @@
+// For tooltips and things that have triangles sticking out of them.
+// Simple notch.
+//
+//     .box:after
+//       content: ''
+//       +notch(left, 10px, #333)
+//
+= notch($direction, $size, $color, $display: block)
+  $opposite: top
+  @if ($direction == top)
+    $opposite: bottom
+  @if ($direction == left)
+    $opposite: right
+  @if ($direction == bottom)
+    $opposite: top
+  @if ($direction == right)
+    $opposite: left
+
+  display: $display
+  width: 0
+  height: 0
+  border: solid $size transparent
+  border-#{$opposite}-color: $color
+
+// Simple notch.
+//
+//     .box
+//       position: relative
+//       +box-notch(left, top, 50%, 10px, #aaa)
+//       +box-notch(left, top, 50%, 10px, #aaa, 2px, #444)
+//
+= box-notch($direction, $align, $offset, $size, $color, $border: 0, $border-color: transparent, $inset: 0)
+  @if ($border > 0)
+    &:before
+      content: ''
+      position: absolute
+
+      // left: -10px, top: 10px
+      #{$direction}: -2 * $size + $inset
+      #{$align}: $offset
+
+      +notch($direction, $size, $border-color)
+
+  &:after
+    content: ''
+    position: absolute
+    // left: -10px, top: 10px
+    #{$direction}: -2 * $size + ($border * 2) + $inset
+    #{$align}: $offset + $border
+
+    +notch($direction, $size - $border, $color)
+
