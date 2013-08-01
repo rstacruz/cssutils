@@ -1,0 +1,26 @@
+// ### retina
+// Media query for retina support.
+//
+//     .box {
+//        @include retina {
+//          background-image: url(icon@2x.png);
+//        }
+//     }
+//
+= retina
+  +hidpi(1.5, "3/2")
+    @content
+
+// ### hidpi
+// Media query for high-DPI resolutions. Consider using (retina)[#retina]
+// instead.
+//
+//     .box {
+//       @include hidpi(2) {
+//         ...
+//       }
+//     }
+//
+= hidpi($ratio: 2, $opera-ratio: "#{$ratio}/1")
+  @media (-o-min-device-pixel-ratio: $opera-ratio), (min--moz-device-pixel-ratio: $ratio), (-webkit-min-device-pixel-ratio: $ratio), (min-device-pixel-ratio: $ratio), (min-resolution: #{$ratio}dppx)
+    @content
