@@ -1,9 +1,11 @@
+// ### notch
 // For tooltips and things that have triangles sticking out of them.
 // Simple notch.
 //
-//     .box:after
-//       content: ''
-//       +notch(left, 10px, #333)
+//     .box:after {
+//       content: '';
+//       @include notch(left, 10px, #333);
+//     }
 //
 = notch($direction, $size, $color, $display: block)
   $opposite: top
@@ -22,12 +24,23 @@
   border: solid $size transparent
   border-#{$opposite}-color: $color
 
-// Simple notch.
+// ### box-notch
+// Enables notches for a container. Be sure to set `position: relative` as
+// well.
 //
-//     .box
-//       position: relative
-//       +box-notch(left, top, 50%, 10px, #aaa)
-//       +box-notch(left, top, 50%, 10px, #aaa, 2px, #444)
+//     @import 'utils/notch';
+//
+//     .box {
+//       position: relative;
+//       @include box-notch(left, top, 50%, 10px, #aaa);
+//     }
+//
+// You may also set a border:
+//
+//     .box {
+//       position: relative;
+//       @include box-notch(left, top, 50%, 10px, #aaa, 2px, #444);
+//     }
 //
 = box-notch($direction, $align, $offset, $size, $color, $border: 0, $border-color: transparent, $inset: 0)
   @if ($border > 0)
