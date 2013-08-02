@@ -62,8 +62,9 @@ Forces word wrapping by breaking words as needed.
 ### ios-scrollbar-y
 Enables fancy scrolling in iOS via nested divs.
 
+    @import 'utils/ios-scrollable';
     .panel {
-       @include 'ios-scrollable-y';
+       @include ios-scrollable-y;
        position: relative;
     }
 
