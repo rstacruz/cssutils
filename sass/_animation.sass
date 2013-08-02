@@ -1,7 +1,12 @@
 // ### animation
-// CSS animations. Also see (keyframes)[#keyframes].
+// CSS animations, since Compass doesn't have any provisions for animation.
+// Also see [keyframes](#keyframes).
 //
-//    @include animation(bounce 300ms linear infinite)
+//     @import 'utils/animation';
+//
+//     .box {
+//       @include animation(bounce 300ms linear infinite);
+//     }
 //
 = animation($args)
   -webkit-animation: $args
