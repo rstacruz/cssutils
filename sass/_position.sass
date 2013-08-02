@@ -1,5 +1,5 @@
 // ### absolute
-// Shorthand for position absolute.
+// Shorthand for `position: absolute`.
 //
 //     @import 'utils/position';
 //
@@ -10,9 +10,17 @@
 = absolute($top: auto, $right: auto, $bottom: auto, $left: auto)
   +position($top, $right, $bottom, $left, $position: absolute)
 
+// ### relative
+// Shorthand for `position: relative`.
+// See [absolute](#absolute) for an example.
+//
 = relative($top: auto, $right: auto, $bottom: auto, $left: auto)
   +position($top, $right, $bottom, $left, $position: relative)
 
+// ### fixed
+// Shorthand for `position: fixed`.
+// See [absolute](#absolute) for an example.
+//
 = fixed($top: auto, $right: auto, $bottom: auto, $left: auto)
   +position($top, $right, $bottom, $left, $position: relative)
 
