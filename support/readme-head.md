@@ -9,7 +9,7 @@ How to use
 Each stylesheet is self-contained, so simply pick out what you need and put it 
 in your project.
 
-[View stylesheets >][sass/]
+[View stylesheets >]( sass/ )
 
 #### Example
 
