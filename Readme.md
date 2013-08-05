@@ -9,11 +9,13 @@ How to use
 Each stylesheet is self-contained, so simply pick out what you need and put it 
 in your project.
 
-~~~ sh
-$ git clone https://github.com/rstacruz/cssutils.git ~/cssutils
+[View stylesheets >][sass/]
 
-$ cd ~/your/project
-$ cp -R ~/cssutils/sass app/assets/stylesheets/utils
+#### Example
+
+~~~ sh
+cd ~/my/project/sass/
+wget https://raw.github.com/rstacruz/cssutils/master/sass/_antialias.sass
 ~~~
 
 Utilities
